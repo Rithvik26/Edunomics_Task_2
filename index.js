@@ -15,12 +15,12 @@ const values = [{Hop_one: 0, noh: 0, cordinates: []}]
 app.get('/',(_, res) => {
     res.send('Hello World');
 });
-//This API is used to send full list of users as json data-get
+//This get API is used to give full list of past calculations as json data-get
 app.get('/values', (_,res) => {
     res.json({ ok: true, values });
 });
 
-//This API is used to Find out the number of hops and coordinates and store it in json data-set
+//This post API is used to give an input height i.e the starting height from where the ball is dropped and find out the number of hops the ball makes and coordinates to plot the graph and store it in json data-set
 app.post('/giveinput', (req,res) => {
     const {Hop_one} = req.body;
     var cord=[]
