@@ -9,7 +9,7 @@ const port = process.env.PORT || 8080;
 app.use(bodyparser.urlencoded({ extended: false}));
 app.use(bodyparser.json());
 
-const values = [{Hop_one: 0, noh: 0, cordinates: []}]
+const values = [{Hop_one: 0,cor:0, noh: 0, cordinates: []}]
 
 
 app.get('/',(_, res) => {
@@ -22,7 +22,7 @@ app.get('/values', (_,res) => {
 
 //This post API is used to give an input height i.e the starting height from where the ball is dropped and find out the number of hops the ball makes and coordinates to plot the graph and store it in json data-set
 app.post('/giveinput', (req,res) => {
-    const {Hop_one} = req.body;
+    const {Hop_one,cor} = req.body;
     var cord=[]
     if (Hop_one) {
         var c =0;
@@ -37,7 +37,7 @@ app.post('/giveinput', (req,res) => {
               
               cord.push(g)  
             c++;
-              y=y/2
+              y=y*(cor);
             
               x+=0.5;
             let r=`(${x},${y})`;
