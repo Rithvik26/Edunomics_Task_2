@@ -45,7 +45,7 @@ app.post('/giveinput', (req,res) => {
               
             
         }
-        values.push({Hop_one,c,cord});
+        values.push({Hop_one,cor,c,cord});
         //to return the new list of users
         res.json({ok : true, values});
     }
