@@ -28,22 +28,26 @@ app.post('/giveinput', (req,res) => {
         var c =0;
         var x= 0;
         var y=parseInt(Hop_one);
-        let wq=(x,y);
-        cord.push(wq);
-        while(y>0)
+        
+        cord.push(x);
+        
+        cord.push(y);
+        //considering y coordinate upto 2 decimals
+        while(parseFloat(y.toFixed(2))>0)
         {
             x+=0.5;
-            let g=(x,0);
-              
-              cord.push(g)  
+            
+        cord.push(x);
+        
+        cord.push(0);
             c++;
               y=y*(cor);
-            
+
               x+=0.5;
-            let r=(x,y);
-              cord.push(r)  
-              
-            
+        //Every two indices of the cord list indicate a coordinate on the graph to plot.
+        cord.push(x);
+        let we=y
+        cord.push(parseFloat(we.toFixed(2)));
         }
         values.push({Hop_one,cor,c,cord});
         //to return the new list of users
