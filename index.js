@@ -24,23 +24,23 @@ app.get('/values', (_,res) => {
 app.post('/giveinput', (req,res) => {
     const {Hop_one,cor} = req.body;
     var cord=[]
-    if (Hop_one) {
+    if (Hop_one && cor) {
         var c =0;
         var x= 0;
         var y=parseInt(Hop_one);
-        let wq=`(${x},${y})`;
+        let wq=(x,y);
         cord.push(wq);
         while(y>0)
         {
             x+=0.5;
-            let g=`(${x},0)`;
+            let g=(x,0);
               
               cord.push(g)  
             c++;
               y=y*(cor);
             
               x+=0.5;
-            let r=`(${x},${y})`;
+            let r=(x,y);
               cord.push(r)  
               
             
